@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-POP Universe | Discover the Rhythm</title>
+    <meta name="description" content="Explore the global phenomenon of K-pop. Artists, music, and culture in a stunning visual experience.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#00D4FF',
+                            pink: '#FF007A',
+                            purple: '#8A2BE2',
+                        },
+                    },
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #FF007A, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#f0f4f8] text-slate-800 font-inter overflow-x-hidden selection:bg-brand-pink selection:text-white">
+
+    <!-- Decorative Background Elements -->
+    <div class="fixed top-[-10%] left-[-5%] w-[600px] h-[600px] bg-brand-blue/20 rounded-full blur-[120px] -z-10 animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-pink/20 rounded-full blur-[120px] -z-10 animate-float"></div>
+    <div class="fixed top-[40%] right-[10%] w-[300px] h-[300px] bg-brand-purple/10 rounded-full blur-[100px] -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto glass rounded-2xl px-8 py-4 flex justify-between items-center">
+            <div class="font-outfit font-black text-2xl tracking-tighter gradient-text">K-POP UNIVERSE</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#hero" class="text-sm font-semibold hover:text-brand-pink transition-colors">Home</a>
+                <a href="#about" class="text-sm font-semibold hover:text-brand-pink transition-colors">About</a>
+                <a href="#generations" class="text-sm font-semibold hover:text-brand-pink transition-colors">Generations</a>
+                <a href="#artists" class="text-sm font-semibold hover:text-brand-pink transition-colors">Artists</a>
+                <a href="#impact" class="text-sm font-semibold hover:text-brand-pink transition-colors">Impact</a>
+            </div>
+            <button class="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:scale-105 active:scale-95 transition-all shadow-lg shadow-slate-200">
+                Join Community
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-1.5 glass rounded-full text-xs font-bold text-brand-pink border border-brand-pink/20">
+                    WORLDWIDE CULTURAL PHENOMENON
+                </div>
+                <h1 class="font-outfit font-black text-6xl lg:text-8xl leading-[1.1] tracking-tight text-slate-900">
+                    Feel the <br> <span class="gradient-text">Rhythm</span> of Korea
+                </h1>
+                <p class="text-lg text-slate-500 max-w-lg leading-relaxed">
+                    Experience the explosive energy, precision choreography, and stunning visuals of the genre that's taking over the world.
+                </p>
+                <div class="flex gap-4 pt-4">
+                    <button class="bg-brand-pink text-white px-8 py-4 rounded-2xl font-bold hover:shadow-xl hover:shadow-brand-pink/30 hover:-translate-y-1 transition-all">
+                        Get Started
+                    </button>
+                    <button class="glass px-8 py-4 rounded-2xl font-bold hover:bg-white transition-all">
+                        Watch Trailer
+                    </button>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brand-blue/30 to-brand-pink/30 blur-3xl -z-10 rounded-full"></div>
+                <img src="assets/hero.png" alt="K-pop Stage" class="rounded-[40px] shadow-2xl border-8 border-white/50 animate-float">
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (Generations) -->
+    <section id="generations" class="py-24 px-6 bg-white/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-4 reveal">
+                <h2 class="font-outfit font-black text-4xl text-slate-900 uppercase">The Evolution of K-POP</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">From 90s hip-hop roots to a 21st-century global powerhouse.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-5 gap-4">
+                <!-- 1st Gen -->
+                <div class="glass p-6 rounded-3xl reveal border-t-4 border-t-brand-pink/50 h-full">
+                    <span class="text-xs font-bold text-brand-pink">1990s</span>
+                    <h3 class="font-bold text-xl mb-2">1st Gen</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">The birth of modern K-pop with <b>Seo Taiji and Boys</b>. Establishing the idol blueprint with H.O.T. and S.E.S.</p>
+                </div>
+                <!-- 2nd Gen -->
+                <div class="glass p-6 rounded-3xl reveal border-t-4 border-t-brand-blue/50 h-full">
+                    <span class="text-xs font-bold text-brand-blue">2000s</span>
+                    <h3 class="font-bold text-xl mb-2">2nd Gen</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">The "Korean Wave" (Hallyu) spreads across Asia. High production and synchronized dance by TVXQ and Girls' Generation.</p>
+                </div>
+                <!-- 3rd Gen -->
+                <div class="glass p-6 rounded-3xl reveal border-t-4 border-t-brand-purple/50 h-full">
+                    <span class="text-xs font-bold text-brand-purple">2010s</span>
+                    <h3 class="font-bold text-xl mb-2">3rd Gen</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Global explosion via social media. <b>BTS</b> and <b>BLACKPINK</b> become worldwide phenomena.</p>
+                </div>
+                <!-- 4th Gen -->
+                <div class="glass p-6 rounded-3xl reveal border-t-4 border-t-brand-pink/50 h-full">
+                    <span class="text-xs font-bold text-brand-pink">Late 2010s+</span>
+                    <h3 class="font-bold text-xl mb-2">4th Gen</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Global-first strategies. Experimental sounds and international focus by NewJeans and Stray Kids.</p>
+                </div>
+                <!-- 5th Gen -->
+                <div class="glass p-6 rounded-3xl reveal border-t-4 border-t-brand-blue/50 h-full">
+                    <span class="text-xs font-bold text-brand-blue">2023+</span>
+                    <h3 class="font-bold text-xl mb-2">5th Gen</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Rapid global engagement and hyper-connected fandoms led by groups like Zerobaseone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Technology Section -->
+    <section class="py-24 px-6 bg-gradient-to-b from-transparent to-white/40">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal order-2 lg:order-1">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-8 glass rounded-[40px] text-center space-y-4">
+                        <div class="text-4xl">🎙️</div>
+                        <h4 class="font-bold">Recruitment</h4>
+                        <p class="text-xs text-slate-500">Global auditions and online casting for future stars.</p>
+                    </div>
+                    <div class="p-8 glass rounded-[40px] text-center space-y-4 mt-8">
+                        <div class="text-4xl">💃</div>
+                        <h4 class="font-bold">Intensive Training</h4>
+                        <p class="text-xs text-slate-500">Years of singing, dancing, and foreign language prep.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-8 reveal order-1 lg:order-2">
+                <h2 class="font-outfit font-black text-4xl text-slate-900 leading-tight">Beyond the Music:<br><span class="gradient-text">Cultural Technology</span></h2>
+                <p class="text-slate-500 text-lg leading-relaxed">
+                    The backbone of the industry is a rigorous <b>trainee system</b>. Agencies invest millions into preparing groups for their debut, focusing on multi-lingual skills and cross-border appeal.
+                </p>
+                <div class="flex items-center gap-6 p-6 bg-white/60 rounded-3xl border border-white">
+                    <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-3xl">🌐</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Soft Power</h4>
+                        <p class="text-sm text-slate-500">K-pop is a key driver of Korea's global image and tourism.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section id="artists" class="py-24 px-6 bg-white/30">
+        <div class="max-w-7xl mx-auto text-center mb-16 space-y-4">
+            <h2 class="font-outfit font-black text-5xl text-slate-900">Global Icons</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg">The artists breaking records and hearts across the globe.</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <!-- BTS -->
+            <div class="group relative reveal">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-purple rounded-[32px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative glass rounded-[32px] overflow-hidden p-4 h-full flex flex-col">
+                    <img src="assets/bts.png" alt="BTS" class="w-full h-72 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-2">BTS</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Paving the way for K-pop's global dominance with self-love messages and artistry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLACKPINK -->
+            <div class="group relative reveal">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-pink to-brand-purple rounded-[32px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative glass rounded-[32px] overflow-hidden p-4 h-full flex flex-col">
+                    <img src="assets/blackpink.png" alt="BLACKPINK" class="w-full h-72 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-2">BLACKPINK</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">The biggest girl group in the world, defining fashion and pop culture.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NewJeans -->
+            <div class="group relative reveal">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-pink rounded-[32px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative glass rounded-[32px] overflow-hidden p-4 h-full flex flex-col">
+                    <img src="assets/newjeans.png" alt="NewJeans" class="w-full h-72 object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-outfit font-bold text-2xl text-slate-900 mb-2">NEWJEANS</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Fresh Y2K energy and addictive melodies leading the 4th generation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto glass rounded-[48px] p-12 lg:p-24 text-center reveal">
+            <h2 class="font-outfit font-black text-4xl lg:text-5xl text-slate-900 mb-12">The Impact in Numbers</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="space-y-2">
+                    <div class="text-5xl font-black gradient-text">100B+</div>
+                    <p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Global Streams</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-5xl font-black gradient-text">190+</div>
+                    <p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Active Markets</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-5xl font-black gradient-text">#1</div>
+                    <p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Billboard Chart Toppers</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-5xl font-black gradient-text">∞</div>
+                    <p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Cultural Influence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-8">
+            <div class="font-outfit font-black text-xl gradient-text">K-POP UNIVERSE</div>
+            <div class="flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#" class="hover:text-brand-pink transition-colors">Privacy</a>
+                <a href="#" class="hover:text-brand-pink transition-colors">Terms</a>
+                <a href="#" class="hover:text-brand-pink transition-colors">Contact</a>
+            </div>
+            <div class="text-slate-400 text-xs">
+                &copy; 2026 K-POP UNIVERSE. Created with ❤️ for Google AI Agent Challenge.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Hover Sound or subtle interaction could go here
+    </script>
+</body>
+</html>
